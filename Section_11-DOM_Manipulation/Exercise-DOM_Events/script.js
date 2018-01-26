@@ -17,9 +17,11 @@ function createListElement() {
 
 function addCheckBox(li) {
     var checkBox = document.createElement("input");
-    checkBox.setAttribute("type", "checkbox");
+    checkBox.setAttribute('type', 'checkbox');
+    // checkBox.setAttribute('onchange', 'crossOff(this)');
     li.prepend(checkBox);
-    crossOff(li);
+    
+    crossOff(checkBox, li);
 }
 
 function addDeleteButton(li){
@@ -45,18 +47,22 @@ function deleteItem(button) {
     })
 }
 
+function crossOff(checkBoxElem, li) {
+    checkBoxElem.addEventListener("click", function() {
+        if (checkBoxElem.checked) {
+            li.classList.add("done");
+        } else {
+            li.classList.remove("done");
+        }
+    });
+
+}
+
 // function crossOff(li) {
-//     var input = document.querySelector("input");
-//     input.addEventListener("click", function(){
+//     li.addEventListener("click", function() {
 //         li.classList.toggle("done");
 //     });
 // }
-
-function crossOff(li) {
-    li.addEventListener("click", function() {
-        li.classList.toggle("done");
-    });
-}
 
 
 function addListAfterClick() {
