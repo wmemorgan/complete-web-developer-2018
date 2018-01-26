@@ -27,12 +27,11 @@ function addDeleteButton(li){
     var btn = document.createElement("button");
     btn.appendChild(document.createTextNode("Delete"));
     li.appendChild(btn);
+    
     deleteItem(btn);
-    // addCheckBox(li);
 }
 
-function addListFeatures(li) {
-    // var li = document.createElement("li");
+function addItemFeatures(li) {
     addCheckBox(li);
     addDeleteButton(li);
 }
@@ -73,4 +72,4 @@ button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
-itemList.forEach(addListFeatures);
+itemList.forEach(addItemFeatures);
