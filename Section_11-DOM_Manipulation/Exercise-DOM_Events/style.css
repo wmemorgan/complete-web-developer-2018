@@ -1,3 +1,12 @@
+li > button {
+  color: white;
+  background-color: red;
+  font-size: 0.6em;
+  border-radius: 25px;
+  box-shadow: 1px;
+  margin: 0px 2px;
+}
+
 .coolTitle {
   text-align: center;
   font-family: 'Oswald', Helvetica, sans-serif;
