@@ -18,7 +18,6 @@ function createListElement() {
 function addCheckBox(li) {
     var checkBox = document.createElement("input");
     checkBox.setAttribute('type', 'checkbox');
-    // checkBox.setAttribute('onchange', 'crossOff(this)');
     li.prepend(checkBox);
     
     crossOff(checkBox, li);
@@ -29,11 +28,11 @@ function addDeleteButton(li){
     btn.appendChild(document.createTextNode("Delete"));
     li.appendChild(btn);
     deleteItem(btn);
-    addCheckBox(li);
+    // addCheckBox(li);
 }
 
 function addListFeatures(li) {
-    var li = document.createElement("li");
+    // var li = document.createElement("li");
     addCheckBox(li);
     addDeleteButton(li);
 }
@@ -58,13 +57,6 @@ function crossOff(checkBoxElem, li) {
 
 }
 
-// function crossOff(li) {
-//     li.addEventListener("click", function() {
-//         li.classList.toggle("done");
-//     });
-// }
-
-
 function addListAfterClick() {
     if (inputLength() > 0) {
         createListElement();
@@ -81,4 +73,4 @@ button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
-itemList.forEach(addDeleteButton);
+itemList.forEach(addListFeatures);
