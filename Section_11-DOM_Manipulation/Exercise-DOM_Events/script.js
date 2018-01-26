@@ -13,6 +13,7 @@ function createListElement() {
     ul.appendChild(li);
     input.value = "";
     addDeleteButton(li);
+    addCheckBox(li);
 }
 
 function addCheckBox(li) {
