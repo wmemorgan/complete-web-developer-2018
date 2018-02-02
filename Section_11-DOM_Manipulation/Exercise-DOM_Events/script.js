@@ -12,8 +12,7 @@ function createListElement() {
     li.appendChild(document.createTextNode(input.value));
     ul.appendChild(li);
     input.value = "";
-    addDeleteButton(li);
-    addCheckBox(li);
+    addItemFeatures(li);
 }
 
 function addCheckBox(li) {
