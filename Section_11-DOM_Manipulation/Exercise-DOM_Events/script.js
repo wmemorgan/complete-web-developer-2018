@@ -23,17 +23,23 @@ function addCheckBox(li) {
     crossOff(checkBox, li);
 }
 
+function crossOff(checkBoxElem, li) {
+    checkBoxElem.addEventListener("click", function () {
+        if (checkBoxElem.checked) {
+            li.classList.add("done");
+        } else {
+            li.classList.remove("done");
+        }
+    });
+
+}
+
 function addDeleteButton(li){
     var btn = document.createElement("button");
     btn.appendChild(document.createTextNode("Delete"));
     li.appendChild(btn);
     
     deleteItem(btn);
-}
-
-function addItemFeatures(li) {
-    addCheckBox(li);
-    addDeleteButton(li);
 }
 
 function deleteItem(button) {
@@ -45,15 +51,9 @@ function deleteItem(button) {
     })
 }
 
-function crossOff(checkBoxElem, li) {
-    checkBoxElem.addEventListener("click", function() {
-        if (checkBoxElem.checked) {
-            li.classList.add("done");
-        } else {
-            li.classList.remove("done");
-        }
-    });
-
+function addItemFeatures(li) {
+    addCheckBox(li);
+    addDeleteButton(li);
 }
 
 function addListAfterClick() {
